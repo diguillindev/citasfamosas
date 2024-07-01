@@ -1,0 +1,12 @@
+<!-- <ul>
+  <li *ngFor="let frase of frases">
+    {{ frase.mensaje }}  {{ frase.autor }}
+  </li>
+</ul>-->
+
+<div *ngFor="let frase of frases; let i = index">
+  <p>{{ frase.mensaje }} - {{ frase.autor }}</p>
+  <button (click)="eliminarFrasePorIndice(i)">ELIMINAR</button>
+</div>
+
+

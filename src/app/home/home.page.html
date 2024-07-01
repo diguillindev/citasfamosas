@@ -1,0 +1,38 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>Cita Aleatoria</ion-title>
+    <ion-buttons slot="end">
+       <ion-button [routerLink]="['/configuracion']">
+        <!--agregar router link para la navegacion-->
+        <ion-icon icon="settings-outline" slot="icon-only" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title *ngFor="let f of frases ">{{f.mensaje }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content> -->
+
+<ion-content>
+  <ion-card *ngIf="fraseAleatoria">
+    <ion-card-header>
+      <ion-card-title>{{ fraseAleatoria.mensaje }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ fraseAleatoria.autor }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+ 
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button [routerLink]="['/gestion']">
+    <ion-icon icon="add" slot="icon-only" />
+  </ion-fab-button>
+</ion-fab>

@@ -1,0 +1,48 @@
+<!--<ion-item>
+  <ion-input [(ngModel)]="fraseSTR" label="Cita" placeholder=""></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input [(ngModel)]="fraseSTR" label="Autor" placeholder="Mahatma Gandhi"></ion-input>
+</ion-item>
+
+<ion-item>
+  <button (click)="onClick()">AGREGAR</button>
+</ion-item>-->
+
+<ion-item>
+  <ion-input [(ngModel)]="mensaje" 
+  required="required"
+  minlength="6"
+  #mensajeInput="ngModel"
+  label="Cita" 
+  placeholder="Ingrese la cita"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input [(ngModel)]="autor" 
+  required="required"
+  minlength="6"
+  #autorInput="ngModel"
+  label="Autor" 
+  placeholder="Mahatma Gandhi"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-button 
+  (click)="onClick()"
+  [disabled]="!mensajeInput.valid"
+  [disabled]="!autorInput.valid"
+  >AGREGAR</ion-button>
+</ion-item>
+<!--utiliza el operador-->
+<ion-item>
+  <ion-text
+  [hidden]="mensajeInput.valid || mensajeInput.pristine "
+  color="danger"
+  >Error! La frase debe ser superior a 5 caracteres
+  </ion-text>
+  <ion-text
+  [hidden]="autorInput.valid || autorInput.pristine "
+  color="danger"
+  >Error! La frase debe ser superior a 2 caracteres
+  </ion-text>
+
+</ion-item>
